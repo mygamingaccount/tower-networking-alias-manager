@@ -72,9 +72,13 @@ def main():
         print('[2] Dump current alias (Base64 for sharing)')
         print('[3] Load a Base64 string')
         print('[Q] Quit')
-        
-        user_input = input(': ').lower()
-        
+
+        try:
+            user_input = input(': ').lower()
+        except KeyboardInterrupt:
+            print()
+            sys.exit()
+
         if user_input == '1':
             print("\n" + dump_alias(plain_text=True))
         elif user_input == '2':
@@ -86,4 +90,5 @@ def main():
             break
 
 if __name__ == '__main__':
+
     main()
