@@ -16,7 +16,7 @@ def get_settings_path():
     else:
         raise OSError(f"Unsupported platform: {sys.platform}")
     
-    return base / 'Godot' / 'app_userdata' / 'Tower Networking Inc' / 'settings.json'
+    return base / 'godot' / 'app_userdata' / 'Tower Networking Inc' / 'settings.json'
 
 def dump_alias(plain_text:bool =False):
     appdata_path = get_settings_path()
