@@ -11,16 +11,20 @@ jobs:
 
     steps:
     - uses: actions/checkout@v6
+    
     - name: Set up Python
       uses: actions/setup-python@v6
       with:
         python-version: '3.x'
+        
     - name: Install PyInstaller
       run: pip install pyinstaller
+      
     - name: Build with PyInstaller
-      run: pyinstaller --onefile --name "TowerAliasTool_${{ matrix.os }}" tower_networking_share_cmd_alias.py
+      run: pyinstaller --onefile --name "Tower Alias Manager" tower_networking_share_cmd_alias.py
+      
     - name: Upload Artifacts
       uses: actions/upload-artifact@v6
       with:
-        name: binaries
+        name: Tower Alias Manager - ${{ matrix.os }}
         path: dist/
